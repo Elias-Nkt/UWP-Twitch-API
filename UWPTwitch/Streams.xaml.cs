@@ -24,6 +24,13 @@ namespace UWPTwitch
     /// </summary>
     public sealed partial class Streams : Page
     {
+        private void Table_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Streams));
+        }
+
+        public static string Game;
+
         Twitch twitch = new Twitch("l0h8dwzkv4cf9gejv1ru661c6dvjj9");
 
         async void WriteTable(Task<Twitch.Stream[]> tsk)
@@ -31,9 +38,9 @@ namespace UWPTwitch
             Twitch.Stream[] streams = tsk.Result;
             int i = 0;
 
-            for (int x = 0; x < 4; x++)
+            for (int x = 0; x < 7; x++)
             {
-                for (int y = 0; y < 7; y++)
+                for (int y = 0; y < 3; y++)
                 {
                     if (i >= streams.Length) break;
 
@@ -41,35 +48,41 @@ namespace UWPTwitch
                     {
                         Grid g1 = new Grid();
                         g1.Width = 165;
-                        g1.Height = 165;
+                        g1.Height = 120;
                         g1.Margin = new Thickness(175 * x, y * 175, 0, 0);
                         g1.HorizontalAlignment = HorizontalAlignment.Left;
                         g1.VerticalAlignment = VerticalAlignment.Top;
                         GridStream.Children.Add(g1);
 
                         BitmapImage bmp = new BitmapImage();
+                        bmp.UriSource = new Uri(streams[i].preview.large);
 
 
                         Image img1 = new Image();
-                        //  img1.Source = ;
-                        img1.Width = 160;
-                        img1.Height = 90;
-                        GridStream.Children.Add(img1);
+                        img1.Source = bmp;
+                        img1.Width = 100;
+                        img1.Height = 120;
+                        img1.Name = streams[i].channel.status;
+                        img1.VerticalAlignment = VerticalAlignment.Top;
+                        img1.Tapped += Table_Tapped;
+                        g1.Children.Add(img1);
+                        
 
                         TextBlock txtb1 = new TextBlock();
-                        // txtb1.
-                        // tapped - вот оно божественное событие
+                        
                         txtb1.Height = 40;
                         txtb1.Width = 160;
-                        if (streams[i].channel.name.Length > 20)
+                        txtb1.VerticalAlignment = VerticalAlignment.Bottom;
+                        if (streams[i].channel.status.Length > 20)
                         {
-                            streams[i].channel.name = streams[i].channel.name.Substring(0, 18);
+                            streams[i].channel.status = streams[i].channel.status.Substring(0, 18) + "...";
                         }
 
-                        txtb1.Text = streams[i].channel.name;
+                        txtb1.Text = streams[i].channel.status;
 
 
                         g1.Children.Add(txtb1);
+
                         i++;
                     });
                 }
@@ -79,10 +92,10 @@ namespace UWPTwitch
         public Streams()
         {
             
-            Task<Twitch.Stream[]> tskGames = twitch.GetStreams("overwatch");
+            Task<Twitch.Stream[]> tskGames = twitch.GetLiveStreams(Game);
             tskGames.ContinueWith(tsk => WriteTable(tsk));
-            int i = 0;
-            // Тут генерим стримы по игре
+            
+            
             this.InitializeComponent();
         }
     }

@@ -30,20 +30,8 @@ namespace UWPTwitch
             this.InitializeComponent();
         }
 
-        static string requestvar;
+        public static string RequestVar;
 
-        public static string RequestVar
-        {
-            get
-            {
-                return requestvar;
-            }
-
-            set
-            {
-                requestvar = value;
-            }
-        }
 
         private void AutoSuggestBox1_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
@@ -55,7 +43,7 @@ namespace UWPTwitch
         private void AutoSuggestBox1_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
             RequestVar = AutoSuggestBox1.Text;
-            txt1.Text = AutoSuggestBox1.Text;
+            
             this.Frame.Navigate(typeof(PivotPage));
         }
 
@@ -66,7 +54,12 @@ namespace UWPTwitch
 
         private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            txt1.Text = "azazazalala";
+           
+        }
+
+        private static void Table_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }

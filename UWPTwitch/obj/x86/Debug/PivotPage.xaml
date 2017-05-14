@@ -10,13 +10,13 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinWidth="1280" MinHeight="720" Margin="0,0,-42,0" Width="1318" MaxWidth="1280" MaxHeight="722">
         <Pivot x:ConnectionId='1' x:Name="MyPivot" Title="Pivot">
             <PivotItem Header="Игры" Margin="12,0,10,0">
-                <Grid x:ConnectionId='3' x:Name="GridGame" HorizontalAlignment="Left" VerticalAlignment="Top" Height="615" Width="1248">
+                <Grid x:ConnectionId='4' x:Name="GridGame" HorizontalAlignment="Left" VerticalAlignment="Top" Height="615" Width="1248">
                     <Image HorizontalAlignment="Left" Height="100" Margin="732,81,0,0" VerticalAlignment="Top" Width="170" RenderTransformOrigin="4.624,1.32"/>
-                    
+
                 </Grid>
             </PivotItem>
             <PivotItem Header="Каналы">
-                <Grid HorizontalAlignment="Left" Height="100" Margin="606,192,0,0" VerticalAlignment="Top" Width="100"/>
+                <Grid x:ConnectionId='3' x:Name="GridChannels" HorizontalAlignment="Left" Height="605" Margin="10,10,0,0" VerticalAlignment="Top" Width="1236"/>
             </PivotItem>
             <PivotItem Header="Видео">
                 <Grid x:ConnectionId='2' x:Name="GridVideo">

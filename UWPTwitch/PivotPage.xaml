@@ -12,15 +12,15 @@
             <PivotItem Header="Игры" Margin="12,0,10,0">
                 <Grid x:Name="GridGame" HorizontalAlignment="Left" VerticalAlignment="Top" Height="615" Width="1248">
                     <Image HorizontalAlignment="Left" Height="100" Margin="732,81,0,0" VerticalAlignment="Top" Width="170" RenderTransformOrigin="4.624,1.32"/>
-                    
+
                 </Grid>
             </PivotItem>
             <PivotItem Header="Каналы">
-                <Grid HorizontalAlignment="Left" Height="100" Margin="606,192,0,0" VerticalAlignment="Top" Width="100"/>
+                <Grid x:Name="GridChannels" HorizontalAlignment="Left" Height="605" Margin="10,10,0,0" VerticalAlignment="Top" Width="1236"/>
             </PivotItem>
             <PivotItem Header="Видео">
                 <Grid x:Name="GridVideo">
-                    <Grid HorizontalAlignment="Left" Height="100" Margin="1146,42,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Grid HorizontalAlignment="Left" Height="605" Margin="10,10,0,0" VerticalAlignment="Top" Width="1236"/>
                 </Grid>
             </PivotItem>
         </Pivot>

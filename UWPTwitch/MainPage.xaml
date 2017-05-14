@@ -11,8 +11,7 @@
         <Grid.RenderTransform>
             <CompositeTransform/>
         </Grid.RenderTransform>
-        <AutoSuggestBox x:Name="AutoSuggestBox1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="1060" QueryIcon="Find" SuggestionChosen="AutoSuggestBox1_SuggestionChosen" Header="Введите запрос" QuerySubmitted="AutoSuggestBox1_QuerySubmitted" Text=""/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Left" Margin="726,253,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="76" Width="97"/>
+        <AutoSuggestBox x:Name="AutoSuggestBox1" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="1060" QueryIcon="Find" SuggestionChosen="AutoSuggestBox1_SuggestionChosen" Header="Введите запрос" QuerySubmitted="AutoSuggestBox1_QuerySubmitted" Text="" FontSize="24" FontStretch="SemiExpanded"/>
         <HyperlinkButton Content="GoToStreamPage" HorizontalAlignment="Left" Margin="234,198,0,0" VerticalAlignment="Top" Height="46" Width="412" Click="HyperlinkButton_Click" RenderTransformOrigin="-0.068,-1.913"/>
         <TextBlock HorizontalAlignment="Left" Margin="726,473,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Tapped="TextBlock_Tapped"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="488,473,0,0" VerticalAlignment="Top" Width="100"/>
