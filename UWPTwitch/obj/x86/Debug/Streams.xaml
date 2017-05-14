@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="UWPTwitch.Streams"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPTwitch"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="346,10,0,0" TextWrapping="Wrap" Text="Streams" VerticalAlignment="Top" Width="445"/>
+        
+        <Grid x:ConnectionId='1' x:Name="GridStream" HorizontalAlignment="Left" Height="665" Margin="10,45,0,0" VerticalAlignment="Top" Width="1260">
+            
+        </Grid>
+        
+    
+    </Grid>
+</Page>
+
