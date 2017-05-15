@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-15T07:22:10.351</Modified>
+      <Modified>2017-05-15T07:30:30.634</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\UWPTwitch.exe">
       <PackagePath>entrypoint\UWPTwitch.exe</PackagePath>
-      <Modified>2017-05-15T07:22:08.363</Modified>
+      <Modified>2017-05-15T07:30:30.003</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Илья-2\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -568,11 +568,11 @@
     <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-15T07:22:10.006</Modified>
+      <Modified>2017-05-15T07:30:30.434</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\Core\UWPTwitch.exe">
       <PackagePath>UWPTwitch.exe</PackagePath>
-      <Modified>2017-05-15T07:22:10.344</Modified>
+      <Modified>2017-05-15T07:30:30.629</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
