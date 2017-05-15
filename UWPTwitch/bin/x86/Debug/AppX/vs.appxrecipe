@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>fe3d4307-514c-4809-aaa1-9e6fd445655e</PackageIdentityName>
     <PackageIdentityPublisher>CN=Илья-2</PackageIdentityPublisher>
-    <IntermediateOutputPath>c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>CF014C166464B2ABB995EF5EB07F4ECA0BE84D6BCBB41C8E24E70566ABE5C3AF</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>fe3d4307-514c-4809-aaa1-9e6fd445655e_1.0.0.0_x86__tsed725s2yxhw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>fe3d4307-514c-4809-aaa1-9e6fd445655e_tsed725s2yxhw!App</RegisteredUserModeAppID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T17:26:14.144</Modified>
+      <Modified>2017-05-15T07:22:10.351</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\UWPTwitch.exe">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\UWPTwitch.exe">
       <PackagePath>entrypoint\UWPTwitch.exe</PackagePath>
-      <Modified>2017-05-14T17:26:13.410</Modified>
+      <Modified>2017-05-15T07:22:08.363</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Илья-2\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -519,60 +519,60 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T20:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-05-14T08:07:42.839</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-19T06:10:41.901</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\UWPTwitch.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\UWPTwitch.xr.xml">
       <PackagePath>UWPTwitch.xr.xml</PackagePath>
-      <Modified>2017-05-14T16:11:17.193</Modified>
+      <Modified>2017-05-15T06:56:59.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-04-19T06:26:33.360</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-14T17:26:13.896</Modified>
+      <Modified>2017-05-15T07:22:10.006</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\Core\UWPTwitch.exe">
+    <AppxPackagedFile Include="C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\bin\x86\Debug\Core\UWPTwitch.exe">
       <PackagePath>UWPTwitch.exe</PackagePath>
-      <Modified>2017-05-14T17:26:14.140</Modified>
+      <Modified>2017-05-15T07:22:10.344</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

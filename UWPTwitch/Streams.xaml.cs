@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,14 +25,36 @@ namespace UWPTwitch
     /// </summary>
     public sealed partial class Streams : Page
     {
-        private void Table_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Streams));
-        }
+        
+
 
         public static string Game;
 
         Twitch twitch = new Twitch("l0h8dwzkv4cf9gejv1ru661c6dvjj9");
+
+        async void ShowUrls(Task<Twitch.StreamQuality> tsk)
+        {
+            Twitch.StreamQuality quality = tsk.Result;
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () =>
+            {
+                txtbl.Visibility = Visibility.Visible;
+                
+                txtbl.Text = "Source:  " + quality.source + "\n\n" + "High:  " + quality.high + "\n\n" + "Medium:  " + quality.medium + "\n\n" + "Low:  " + quality.low + "\n\n" + "Mobile:  " + quality.mobile;
+                
+            });
+             /*MessageDialog dialog = new MessageDialog("Source: " + quality.source);
+            await dialog.ShowAsync(); */
+        }
+
+        private void Stream_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Task<Twitch.StreamQuality> tskGames = twitch.GetQualities((sender as Image).Name);
+            tskGames.ContinueWith(tsk => ShowUrls(tsk));
+
+            
+        }
+
+
 
         async void WriteTable(Task<Twitch.Stream[]> tsk)
         {
@@ -49,7 +72,7 @@ namespace UWPTwitch
                         Grid g1 = new Grid();
                         g1.Width = 165;
                         g1.Height = 120;
-                        g1.Margin = new Thickness(175 * x, y * 175, 0, 0);
+                        g1.Margin = new Thickness(180 * x, 10 + y * 175, 0, 0);
                         g1.HorizontalAlignment = HorizontalAlignment.Left;
                         g1.VerticalAlignment = VerticalAlignment.Top;
                         GridStream.Children.Add(g1);
@@ -62,9 +85,9 @@ namespace UWPTwitch
                         img1.Source = bmp;
                         img1.Width = 100;
                         img1.Height = 120;
-                        img1.Name = streams[i].channel.status;
+                        img1.Name = streams[i].channel.name;
                         img1.VerticalAlignment = VerticalAlignment.Top;
-                        img1.Tapped += Table_Tapped;
+                        img1.Tapped += Stream_Tapped;
                         g1.Children.Add(img1);
                         
 
@@ -73,6 +96,7 @@ namespace UWPTwitch
                         txtb1.Height = 40;
                         txtb1.Width = 160;
                         txtb1.VerticalAlignment = VerticalAlignment.Bottom;
+                        txtbl.TextAlignment = TextAlignment.Center;
                         if (streams[i].channel.status.Length > 20)
                         {
                             streams[i].channel.status = streams[i].channel.status.Substring(0, 18) + "...";
@@ -91,12 +115,20 @@ namespace UWPTwitch
 
         public Streams()
         {
-            
             Task<Twitch.Stream[]> tskGames = twitch.GetLiveStreams(Game);
             tskGames.ContinueWith(tsk => WriteTable(tsk));
             
             
             this.InitializeComponent();
+        }
+
+        private void txtbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if(txtbl.Visibility == Visibility.Collapsed)
+            {
+                this.Frame.Navigate(typeof(PivotPage));
+            }
+            txtbl.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -1,1 +1,1 @@
-c:\users\илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\UWPTwitch.csproj;x86
+C:\Users\Илья-2\documents\visual studio 2017\Projects\UWPTwitch\UWPTwitch\UWPTwitch.csproj;x86

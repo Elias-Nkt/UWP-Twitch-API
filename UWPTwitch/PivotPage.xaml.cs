@@ -37,7 +37,6 @@ namespace UWPTwitch
         {
             Twitch.Game[] games = tsk.Result;
             int i = 0;
-            // int y = games.Length / 7 + 1;
             if (games == null) return;
 
             for (int y = 0; y < 3; y++)
@@ -50,7 +49,7 @@ namespace UWPTwitch
                     {
                         Grid g1 = new Grid();
                         g1.Width = 165;
-                        g1.Height = 120;
+                        g1.Height = 185;
                         g1.Margin = new Thickness(175 * x, 10 + y * 175, 0, 0);
                         g1.HorizontalAlignment = HorizontalAlignment.Left;
                         g1.VerticalAlignment = VerticalAlignment.Top;
@@ -75,7 +74,8 @@ namespace UWPTwitch
                         txtb1.Height = 40;
                         txtb1.Width = 160;
                         txtb1.VerticalAlignment = VerticalAlignment.Bottom;
-                        if(games[i].name.Length > 20)
+                        txtb1.TextAlignment = TextAlignment.Center;
+                        if (games[i].name.Length > 18)
                         {
                             games[i].name = games[i].name.Substring(0, 18) + "...";
                         }
@@ -99,7 +99,7 @@ namespace UWPTwitch
 
             for (int y = 0; y < 3; y++)
             {
-                for (int x = 0; x < 7; x++)
+                for (int x = 0; x < 5; x++)
                 {
                     if (i >= channels.Length) break;
 
@@ -107,32 +107,35 @@ namespace UWPTwitch
                     {
                         Grid g1 = new Grid();
                         g1.Width = 165;
-                        g1.Height = 150;
-                        g1.Margin = new Thickness(175 * x, 10 + y * 175, 0, 0);
+                        g1.Height = 165;
+                        g1.Margin = new Thickness(250 * x, 10 + y * 250, 0, 0);
                         g1.HorizontalAlignment = HorizontalAlignment.Left;
                         g1.VerticalAlignment = VerticalAlignment.Top;
                         GridChannels.Children.Add(g1);
 
-                        BitmapImage bmp = new BitmapImage();
-                        bmp.UriSource = new Uri(channels[i].logo);
+                        if (channels[i].logo != null)
+                        {
+                            BitmapImage bmp = new BitmapImage();
+                            bmp.UriSource = new Uri(channels[i].logo);
 
 
-                        Image img1 = new Image();
-                        img1.Source = bmp;
-                        img1.Width = 100;
-                        img1.Height = 160;
-                        img1.Name = channels[i].name;
-                        img1.Tapped += Table_Tapped;
+                            Image img1 = new Image();
+                            img1.Source = bmp;
+                            img1.Width = 100;
+                            img1.Height = 160;
+                            img1.Name = channels[i].name;
+                            img1.Tapped += Table_Tapped;
 
-                        img1.VerticalAlignment = VerticalAlignment.Top;
-                        g1.Children.Add(img1);
+                            img1.VerticalAlignment = VerticalAlignment.Top;
+                            g1.Children.Add(img1);
+                        }
 
                         TextBlock txtb1 = new TextBlock();
-                       
                         txtb1.Height = 40;
                         txtb1.Width = 160;
                         txtb1.VerticalAlignment = VerticalAlignment.Bottom;
-                        if (channels[i].name.Length > 20)
+                        txtb1.TextAlignment = TextAlignment.Center;
+                        if (channels[i].name.Length > 18)
                         {
                             channels[i].name = channels[i].name.Substring(0, 18) + "...";
                         }
@@ -149,36 +152,36 @@ namespace UWPTwitch
 
         async void WriteTableSt(Task<Twitch.Stream[]> tsk)
         {
-            Twitch.Stream[] channels = tsk.Result;
+            Twitch.Stream[] streams = tsk.Result;
             int i = 0;
 
-            if (channels == null) return;
+            if (streams == null) return;
 
-            for (int y = 0; y < 3; y++)
+            for (int y = 0; y < 4; y++)
             {
-                for (int x = 0; x < 7; x++)
+                for (int x = 0; x < 6; x++)
                 {
-                    if (i >= channels.Length) break;
+                    if (i >= streams.Length) break;
 
                     await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () =>
                     {
                         Grid g1 = new Grid();
                         g1.Width = 165;
-                        g1.Height = 150;
-                        g1.Margin = new Thickness(175 * x, 10 + y * 175, 0, 0);
+                        g1.Height = 100;
+                        g1.Margin = new Thickness(250 * x, 10 + y * 250, 0, 0);
                         g1.HorizontalAlignment = HorizontalAlignment.Left;
                         g1.VerticalAlignment = VerticalAlignment.Top;
-                        GridChannels.Children.Add(g1);
+                        GridVideo.Children.Add(g1);
 
                         BitmapImage bmp = new BitmapImage();
-                        bmp.UriSource = new Uri(channels[i].preview.medium);
+                        bmp.UriSource = new Uri(streams[i].preview.medium);
 
 
                         Image img1 = new Image();
                         img1.Source = bmp;
                         img1.Width = 100;
-                        img1.Height = 160;
-                        img1.Name = channels[i].channel.name;
+                        img1.Height = 100;
+                        img1.Name = streams[i].channel.name;
                         img1.Tapped += Table_Tapped;
 
                         img1.VerticalAlignment = VerticalAlignment.Top;
@@ -189,12 +192,13 @@ namespace UWPTwitch
                         txtb1.Height = 40;
                         txtb1.Width = 160;
                         txtb1.VerticalAlignment = VerticalAlignment.Bottom;
-                        if (channels[i].channel.name.Length > 20)
+                        txtb1.TextAlignment = TextAlignment.Center;
+                        if (streams[i].channel.name.Length > 18)
                         {
-                            channels[i].channel.name = channels[i].channel.name.Substring(0, 18) + "...";
+                            streams[i].channel.name = streams[i].channel.name.Substring(0, 18) + "...";
                         }
 
-                        txtb1.Text = channels[i].channel.name;
+                        txtb1.Text = streams[i].channel.name;
 
 
                         g1.Children.Add(txtb1);
@@ -208,36 +212,23 @@ namespace UWPTwitch
         {
             this.InitializeComponent();
 
-            //txt1.Text = MyPivot.Width.ToString();
             string game = MainPage.RequestVar;
 
             Task<Twitch.Game[]> tskGames = twitch.SearchGames(game);
             tskGames.ContinueWith(tsk => WriteTable(tsk));
 
             Task<Twitch.Channel[]> tskChannels = twitch.SearchChannels(game);
-            tskChannels.ContinueWith(tsk => WriteTableCh(tsk));
+            tskChannels.ContinueWith(tsk => WriteTableCh(tsk)); 
 
             Task<Twitch.Stream[]> tskStreams = twitch.SearchStreams(game);
             tskStreams.ContinueWith(tsk => WriteTableSt(tsk));
-            /* Task<Twitch.Game[]> tskGames = twitch.SearchGames("over");
-             tskGames.ContinueWith(tsk => WriteTable(tsk));
-             */
+         
         }
 
-      /*  private void AddEl_Click(object sender, RoutedEventArgs e)
+        private void txtbutton_Click(object sender, RoutedEventArgs e)
         {
+            this.Frame.Navigate(typeof(MainPage));
+        }
 
-            Image img1 = new Image();
-          //  img1.Source = ;
-            img1.Width = 160;
-            img1.Height = 90;
-            GridGame.Children.Add(img1);
-
-            Grid g1 = new Grid();
-            g1.Width = 165;
-            g1.Height = 135;
-            GridGame.Children.Add(g1);
-           
-        }*/
     }
 }

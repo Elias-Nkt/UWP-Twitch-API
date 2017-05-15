@@ -23884,10 +23884,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\илья-2\\documents\\visual studio 2017\\Projects\\UWPTwitch\\UWPTwitch\\UWPTwitch.csproj",
+      "projectUniqueName": "C:\\Users\\Илья-2\\documents\\visual studio 2017\\Projects\\UWPTwitch\\UWPTwitch\\UWPTwitch.csproj",
       "projectName": "UWPTwitch",
-      "projectPath": "c:\\users\\илья-2\\documents\\visual studio 2017\\Projects\\UWPTwitch\\UWPTwitch\\UWPTwitch.csproj",
-      "outputPath": "c:\\users\\илья-2\\documents\\visual studio 2017\\Projects\\UWPTwitch\\UWPTwitch\\obj\\",
+      "projectPath": "C:\\Users\\Илья-2\\documents\\visual studio 2017\\Projects\\UWPTwitch\\UWPTwitch\\UWPTwitch.csproj",
+      "outputPath": "C:\\Users\\Илья-2\\documents\\visual studio 2017\\Projects\\UWPTwitch\\UWPTwitch\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "uap10.0.15063"

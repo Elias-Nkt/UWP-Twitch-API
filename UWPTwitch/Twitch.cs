@@ -71,7 +71,25 @@ namespace UWPTwitch
         }
         #endregion
 
+        #region DirectURL
+        struct TwitchTokenResponse
+        {
+            public string token;
+            public string sig;
+        }
+        public struct StreamQuality
+        {
+            public string source;
+            public string high;
+            public string medium;
+            public string low;
+            public string mobile;
+        }
+        #endregion
+
         HttpClient web = new HttpClient();
+        HttpClient web_user = new HttpClient();
+
         public Twitch(string api)
         {
             web.DefaultRequestHeaders.Add("Client-ID", api);
@@ -103,6 +121,50 @@ namespace UWPTwitch
             string res = await web.GetStringAsync("https://api.twitch.tv/kraken/streams/?game=" + game);
             TwitchStreamsResponse resp = JsonConvert.DeserializeObject<TwitchStreamsResponse>(res);
             return resp.streams;
+        }
+
+        public async Task<StreamQuality> GetQualities(string channel)
+        {
+            string res = await web.GetStringAsync("http://api.twitch.tv/api/channels/" + Uri.EscapeDataString(channel) + "/access_token");
+            TwitchTokenResponse tok = JsonConvert.DeserializeObject<TwitchTokenResponse>(res);
+
+            res = await web_user.GetStringAsync("http://usher.twitch.tv/api/channel/hls/" + Uri.EscapeDataString(channel) + ".m3u8?" +
+                                           "player=twitchweb&token=" + Uri.EscapeDataString(tok.token) + "&sig=" + Uri.EscapeDataString(tok.sig) +
+                                           "&allow_audio_only=true&allow_source=true&type=any&p=23423");
+
+
+            StreamQuality quality = new StreamQuality();
+
+            string[] m3u = res.Split(new string[] { "#EXT-X-STREAM-INF" }, StringSplitOptions.None);
+
+            foreach (string s in m3u)
+            {
+                if (!s.Contains("VIDEO=\""))
+                    continue;
+
+                string type = s.Split(new string[] { "VIDEO=\"" }, StringSplitOptions.None)[1].Split('"')[0];
+                if (type == "720p60")
+                {
+                    quality.high = s.Split('\n')[1];
+                }
+                else if (type == "480p30")
+                {
+                    quality.medium = s.Split('\n')[1];
+                }
+                else if (type == "360p30")
+                {
+                    quality.low = s.Split('\n')[1];
+                }
+                else if (type == "160p30")
+                {
+                    quality.mobile = s.Split('\n')[1];
+                }
+                else if (type == "chunked")
+                {
+                    quality.source = s.Split('\n')[1];
+                }
+            }
+            return quality;
         }
     }
 }
