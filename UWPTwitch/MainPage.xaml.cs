@@ -46,20 +46,5 @@ namespace UWPTwitch
             
             this.Frame.Navigate(typeof(PivotPage));
         }
-
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-           this.Frame.Navigate(typeof(PivotPage));
-        }
-
-        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-           
-        }
-
-        private static void Table_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -12,7 +12,7 @@
             <CompositeTransform/>
         </Grid.RenderTransform>
         <AutoSuggestBox x:ConnectionId='1' x:Name="AutoSuggestBox1" HorizontalAlignment="Left" Height="64" Margin="10,126,0,0" VerticalAlignment="Top" Width="1088" QueryIcon="Find"                                                     Header="Введите запрос в поиск Twitch:"                                                 Text="" FontSize="24" FontStretch="SemiExpanded"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="488,473,0,0" VerticalAlignment="Top" Width="100"/>
+        
 
     </Grid>
 </Page>

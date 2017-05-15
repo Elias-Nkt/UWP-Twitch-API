@@ -124,7 +124,7 @@ namespace UWPTwitch
                             img1.Width = 100;
                             img1.Height = 160;
                             img1.Name = channels[i].name;
-                            img1.Tapped += Table_Tapped;
+                            //img1.Tapped += Table_Tapped;
 
                             img1.VerticalAlignment = VerticalAlignment.Top;
                             g1.Children.Add(img1);
@@ -182,7 +182,7 @@ namespace UWPTwitch
                         img1.Width = 100;
                         img1.Height = 100;
                         img1.Name = streams[i].channel.name;
-                        img1.Tapped += Table_Tapped;
+                        //img1.Tapped += Table_Tapped;
 
                         img1.VerticalAlignment = VerticalAlignment.Top;
                         g1.Children.Add(img1);
